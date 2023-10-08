@@ -1,8 +1,8 @@
 package initializers
 
 import (
-	"github.com/joho/godotenv"
-	"log"
+	// "github.com/joho/godotenv"
+	// "log"
 	"os"
 )
 
@@ -18,10 +18,10 @@ type Config struct {
 }
 
 func LoadConfig(path string) Config {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	log.Fatal("Error loading .env file")
+	// }
 
 	config := Config{
 		DBHost:         os.Getenv("PGHOST"),
