@@ -20,7 +20,7 @@ func init() {
 func main() {
 	app := fiber.New()
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("refer to https://github.com/Keima483/fiber-ems for the endpoints")
+		return c.SendString("refer to https://github.com/Keima483/mess-menu-app-backend for the endpoints")
 	})
 	routes.UnAuthorizedRoutes(app)
 	routes.AuthorizedMessRoutes(app)
