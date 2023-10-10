@@ -10,13 +10,13 @@ import (
 
 func GetMess() []repository.Mess {
 	var messes []repository.Mess
-	initializers.DB.Find(&messes)
+	initializers.DB.Preload("Items").Find(&messes)
 	return messes
 }
 
 func GetMessById(messId int) (repository.Mess, error) {
 	var mess repository.Mess
-	initializers.DB.Find(&mess, messId)
+	initializers.DB.Preload("Items").Find(&mess, messId)
 	if mess.MessName == "" {
 		return repository.Mess{}, errors.New("no mess with this id")
 	}

@@ -18,6 +18,12 @@ type Config struct {
 }
 
 func LoadConfig(path string) Config {
+
+	// err := godotenv.Load()
+    // if err != nil {
+    //     log.Fatal("Error loading .env file")
+    // }
+	
 	config := Config{
 		DBHost:         os.Getenv("PGHOST"),
 		DBUserName:     os.Getenv("PGUSER"),
@@ -28,6 +34,5 @@ func LoadConfig(path string) Config {
 		AdminPassword:  os.Getenv("ADMINPASSWORD"),
 		JwtSecret:      os.Getenv("JWT_SECRET"),
 	}
-
 	return config
 }
